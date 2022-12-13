@@ -58,25 +58,13 @@ image_List = []
 json_List = []
 #폴더가 존재할 경우를 대비
 try:
-    os.mkdir(default_img_path)
-except:
-    print('img 폴더 존재')
-
-try:
     os.mkdir(default_label_path)
 except:
     print('txt폴더 존재')
 
 for fileName in fileList:
-    if(fileName.endswith('.png') or 
-    fileName.endswith('jpg') or
-    fileName.endswith('jpeg')):
-        image_List.append(fileName)
-    elif(fileName.endswith('.json')):
+    if(fileName.endswith('.json')):
         json_List.append(fileName)
 
 for fileName in json_List:
     convlabelMe2Yolo(fileName)
-
-for fileName in image_List:
-    shutil.copy(fileName, default_img_path+'/'+fileName)    #images 폴더에 사진 복사
