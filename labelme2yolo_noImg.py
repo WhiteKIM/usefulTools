@@ -49,7 +49,7 @@ def convlabelMe2Yolo(jsonFile):
             y = y*dh
             h = h*dh
             with open(default_label_path+'/'+os.path.splitext(jsonFile)[0]+'.txt', 'a') as txtfile:
-                txtfile.write(str(class_name.index(box[box_data]['label']))+' '+str(x)+' '+str(y)+' '+str(w)+' '+str(y)+'\n')
+                txtfile.write(str(class_name.index(box[box_data]['label']))+' '+str(x)+' '+str(y)+' '+str(w)+' '+str(h)+'\n')
                 txtfile.close()
         
 #소스파일이 위치한 곳에서 작업을 수행
