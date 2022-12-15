@@ -14,4 +14,3 @@
 10. mvFolder : json파일과 이미지 파일을 일괄로 이동
 11. rm_empJsonAndIMG : labelme의 경우 ctrl+p 기능을 통해 이전 json정보를 다음 이미지 파일에 적용할 수 있는데, 이 경우 객체가 없어 모든 폴리곤을 제거하여도 json이 남는 경우가 발생하여, 이렇게 아무런 정보가 없는 json을 제거하는 기능
 12. test_yolo_annotation : 변환된 yolo용 라벨이 잘 잡혀있는지 확인할 수 있음
-13. labelme2yolov7 : 업로드 예정
