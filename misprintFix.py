@@ -32,10 +32,12 @@ for jsonFile in jsonList:
     check = False
     with open(jsonFile, 'r+') as f:
         data = json.load(f)
-        for i in range(len(data['shapes'])):
-            if(data['shapes'][i]['label']==before):
-                data['shapes'][i]['label'] = after
-                check = True
-        f.seek(0)
-        json.dump(data, f, ensure_ascii=False, indent='\t')
-        f.close()
+        with open(jsonFile, 'w') as f1:
+            for i in range(len(data['shapes'])):
+                if(data['shapes'][i]['label']==before):
+                    data['shapes'][i]['label'] = after
+                    check = True
+            f.seek(0)
+            json.dump(data, f1, ensure_ascii=False, indent='\t')
+            f.close()
+            f1.close()
